@@ -1,46 +1,21 @@
-import fs from 'fs';
-import path from 'path';
-import Link from 'next/link';
-import { GetStaticProps } from 'next';
+import Link from "next/link";
 
-type Member = {
-  id: number;
-  name: string;
-  position: string;
-};
-
-type Props = {
-  members: Member[];
-};
-
-export default function HomePage({ members }: Props) {
+const Home = () => {
   return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold mb-6">Team Members</h1>
-      <div className="grid gap-4">
-        {members.map((member) => (
-          <Link key={member.id} href={`/team/${member.id}`}>
-            <div className="p-4 border rounded hover:bg-gray-100 cursor-pointer">
-              <h2 className="text-xl font-semibold">{member.name}</h2>
-              <p>{member.position}</p>
-            </div>
-          </Link>
-        ))}
+    <main className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-6 text-gray-800">
+          Welcome to the Blog
+        </h1>
+        <Link
+          href="/posts"
+          className="px-6 py-3 bg-blue-600 text-white rounded-lg text-lg hover:bg-blue-700 transition"
+        >
+          View All Posts
+        </Link>
       </div>
-    </div>
+    </main>
   );
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  const filePath = path.join(process.cwd(), 'data', 'team.json');
-  const jsonData = fs.readFileSync(filePath, 'utf-8');
-  const members = JSON.parse(jsonData);
-
-  return {
-    props: {
-      members,
-    },
-  };
 };
 
-
+export default Home;
