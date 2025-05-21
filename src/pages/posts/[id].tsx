@@ -28,16 +28,16 @@ const PostDetail = ({ ost }: { ost: Post }) => {
   }
 
   return (
-    <main className="min-h-screen bg-gray-100 p-6">
-      <div className="max-w-3xl mx-auto">
+    <main className="min-h-screen bg-gray-400 p-16">
+      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg text-center justify-center h-25">
         <Link
           href="/posts"
-          className="inline-block mb-6 px-6 py-3 bg-blue-600 text-white rounded-lg text-lg hover:bg-blue-700 transition"
+          className="inline-block mt-4  p-2 text-center bg-blue-600 text-white rounded-lg text-lg hover:bg-blue-700 transition"
         >
           Back to all posts
         </Link>
 
-        <div className="bg-white rounded-2xl shadow-lg p-8">
+        <div className="bg-white rounded-2xl shadow-lg p-8 mt-15">
           {/* Image */}
           <img
             src={`https://picsum.photos/id/${49 + ost.id}/800/400`}

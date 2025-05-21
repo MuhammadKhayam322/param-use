@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gray-100">
+    <main className="min-h-screen flex items-center justify-center bg-gray-400">
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-6 text-gray-800">
           Welcome to the Blog

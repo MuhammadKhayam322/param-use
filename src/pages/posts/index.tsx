@@ -20,17 +20,19 @@ export const getServerSideProps: GetServerSideProps = async () => {
 const PostList = ({ posts }: { posts: Post[] }) => {
   return (
     <main className="min-h-screen bg-gray-400 py-10 px-4">
-      <div className="mx-auto bg-white h-20 mt-10 rounded-lg shadow-md  p-6">
+      <div className="mx-auto bg-white h-20 mt-10 rounded-lg shadow-md  py-6">
         <h1 className="text-4xl font-bold mb-8 text-center text-blue-800">
           All Posts
         </h1>
-        <Link href="/todos" className="text-white underline-none bg-blue-500 p-2 rounded-lg mb-6">
+        <div className="top-27 absolute left-10">
+        <Link href="/todos" className="text-white underline-none bg-blue-500 p-2 rounded-lg mt-6">
           View To-Do List
-        </Link>
-        <div className="text-center flex justify-center mb-6">
+        </Link> 
+        </div>
+        <div className=" flex right-10 absolute top-25">
           <Link
             href="/"
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg text-lg hover:bg-blue-700 transition"
+            className="p-2 bg-blue-600 text-white rounded-lg text-lg hover:bg-blue-700 transition"
           >
             Back to Home
           </Link>
