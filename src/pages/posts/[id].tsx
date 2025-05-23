@@ -1,5 +1,5 @@
 import { GetServerSideProps } from "next";
-import { useRouter } from "next/router";
+import Image from "next/image";
 import Link from "next/link";
 
 type Post = {
@@ -20,7 +20,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 };
 
 const PostDetail = ({ ost }: { ost: Post }) => {
-  const router = useRouter();
+  
 
   if (!ost) {
     return <p className="text-center text-red-600">Post not found</p>;
@@ -38,7 +38,7 @@ const PostDetail = ({ ost }: { ost: Post }) => {
 
         <div className="bg-gray-300 rounded-2xl shadow-lg p-8 mt-15">
       
-          <img
+          <Image
             src={`https://picsum.photos/id/${49 + ost.id}/800/400`}
             alt={ost.title}
             className="w-full h-64 object-cover rounded-lg mb-6"
