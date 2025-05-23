@@ -20,7 +20,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 const PostList = ({ posts }: { posts: Post[] }) => {
   return (
     <main className="min-h-screen bg-gray-400 py-10 px-4">
-      <div className="mx-auto bg-white h-20 mt-10 rounded-lg shadow-md  py-6">
+      <div className="mx-auto bg-gray-200 h-20 mt-10 rounded-lg shadow-md  py-6">
         <h1 className="text-4xl font-bold mb-8 text-center text-blue-800">
           All Posts
         </h1>
@@ -41,11 +41,11 @@ const PostList = ({ posts }: { posts: Post[] }) => {
           {posts.slice(0, 12).map((post, index) => (
             <li
               key={post.id}
-              className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+              className="bg-gray-200 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
             >
               <Link href={`/posts/${post.id}`}>
                 <div className="cursor-pointer">
-                  {/* Image */}
+                  
                   <img
                     src={`https://picsum.photos/id/${50 + index}/600/300`}
                     alt={post.title}

@@ -17,7 +17,6 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   return {
     props: { ost },
   };
-  
 };
 
 const PostDetail = ({ ost }: { ost: Post }) => {
@@ -29,7 +28,7 @@ const PostDetail = ({ ost }: { ost: Post }) => {
 
   return (
     <main className="min-h-screen bg-gray-400 p-16">
-      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg text-center justify-center h-25">
+      <div className="max-w-4xl mx-auto bg-gray-200 rounded-2xl shadow-lg text-center justify-center h-25">
         <Link
           href="/posts"
           className="inline-block mt-4  p-2 text-center bg-blue-600 text-white rounded-lg text-lg hover:bg-blue-700 transition"
@@ -37,8 +36,8 @@ const PostDetail = ({ ost }: { ost: Post }) => {
           Back to all posts
         </Link>
 
-        <div className="bg-white rounded-2xl shadow-lg p-8 mt-15">
-          {/* Image */}
+        <div className="bg-gray-300 rounded-2xl shadow-lg p-8 mt-15">
+      
           <img
             src={`https://picsum.photos/id/${49 + ost.id}/800/400`}
             alt={ost.title}
@@ -57,4 +56,3 @@ const PostDetail = ({ ost }: { ost: Post }) => {
 };
 
 export default PostDetail;
-
